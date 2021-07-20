@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load  i18n %}
+
+{% block content %}
+
+<div id='app'>
+
+
+    <div class="flex flex-wrap justify-center mt-6">
+        <div class="w-full max-w-sm px-2 md:px-0">
+            <div class="flex flex-col bg-white border border-2 rounded shadow-md">
+                <div class="font-semibold bg-gray-200 text-teal-700 py-3 px-6 ">
+                    {% trans 'Register' %}
+                </div>
+                <form class="p-2" method="POST">
+                    {% csrf_token %}
+                    {% include "form/form.html" with form=form only='nick' %}
+                    {% include "form/formRow.html" with form=form field='first_name,last_name' %}
+                    {% include "form/form.html" with form=form only='email,phone' %}
+                    {% include "form/form.html" with form=form only='password1,password2' %}
+
+
+                    <div class="flex flex-wrap items-center">
+                        {% trans 'Sign Up' as btn %}
+
+                                                {% include "form/btn.html" with name=btn %}
+
+                        {% url 'accounts:restore_password' as the_url %}
+
+                        <p class="w-full text-xs text-center text-gray-700 mt-4 ">
+                            {% url 'accounts:login' as the_url %}
+                            {% trans ' I have an account already' %}
+                            <a class="text-blue-500 hover:text-blue-700 no-underline" href="{{ the_url }}">
+
+                                {% trans 'Login' %}
+                            </a>
+                        </p>
+
+                    </div>
+
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block  js %}
+
+{% endblock %}

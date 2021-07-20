@@ -1,0 +1,38 @@
+{% load forms %}
+<div class="ml-10 flex items-baseline space-x-4 ">
+
+
+    {% is_active "tickets:localFightList" as is_active%}
+    {% url 'tickets:localFightList' as the_url %}
+    {% if user.is_authenticated%}
+    {% url 'accounts:home' as the_url %}
+    {% is_active "accounts:home" as is_active%}
+
+    <a href="{{the_url}}"
+       class="{{is_active}}  py-2 rounded-md text-sm font-medium  hover:bg-gray-200 hover:text-black ">calculator page
+    </a>
+    {% url 'accounts:history' as the_url %}
+
+    {% is_active "accounts:history" as is_active%}
+
+    <a href="{{the_url}}"
+       class="{{is_active}}  py-2 rounded-md text-sm font-medium  hover:bg-gray-200 hover:text-black ">History page
+    </a>
+    {% url 'accounts:profile' as the_url %}
+
+    {% is_active "accounts:profile" as is_active%}
+
+    <a href="{{the_url}}"
+       class="{{is_active}}  py-2 rounded-md text-sm font-medium  hover:bg-gray-200 hover:text-black ">User profile
+    </a>
+
+{% url 'accounts:change_profile' as the_url %}
+
+    {% is_active "accounts:change_profile" as is_active%}
+
+    <a href="{{the_url}}"
+       class="{{is_active}}  py-2 rounded-md text-sm font-medium  hover:bg-gray-200 hover:text-black ">Change Profile
+    </a>
+    {%endif%}
+
+</div>

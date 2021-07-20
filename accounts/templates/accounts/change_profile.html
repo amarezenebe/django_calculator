@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+{% block content %}
+
+<div class="container mx-auto   ">
+
+    <div class="flex flex-wrap justify-center sm:mt-16">
+        <div class="w-full max-w-sm">
+            <div class="flex flex-col break-words bg-white border border-2 rounded shadow-md">
+
+                <div class="font-semibold bg-gray-200 text-teal-700 py-3 px-6 mb-0">
+                    {% trans 'Change profile' %}
+
+                </div>
+
+                <form class="w-full p-4" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="flex justify-center">
+                        {% if request.user.info.image %}
+                        <img class=" h-20 w-20 bg-cover rounded-full" src="{{ request.user.info.image.url }}">
+                        {% endif %}
+                    </div>
+
+                    {% include "form/form.html" with form=form only="first_name,last_name,password" %}
+
+                    {% trans 'Change' as btn %}
+
+                    {% include "form/btn.html" with name="Change" center="True" %}
+
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+
+

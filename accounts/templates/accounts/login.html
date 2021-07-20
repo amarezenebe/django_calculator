@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% load forms %}
+{% load i18n %}
+
+{% block content %}
+
+<div>
+
+    <div class="flex flex-wrap justify-center mt-4 sm:mt-6 md:mt-10 px-2 md:px-0">
+        <div class="w-full max-w-sm">
+            <div class="flex flex-col break-words bg-white border border-2 rounded shadow-md">
+
+                <div class="font-semibold bg-gray-200 text-teal-700 py-3 px-6 mb-0 text-base">
+                    Login
+                </div>
+
+                <form class="w-full p-4" method="POST">
+                    {% csrf_token %}
+                    {% include "form/form.html" with form=form only='nick,password' %}
+
+                    {% include "form/btn.html" with center="True" name="Login" %}
+
+                    <div class="flex flex-wrap items-center">
+
+
+
+                        <p class="w-full text-xs text-center text-gray-700 mt-4 ">
+                            {% url 'accounts:sign_up' as the_url %}
+                            {% trans "Don't have an account ?" %} <a
+                                class="text-blue-500 hover:text-blue-700 no-underline"
+                                href="{{ the_url }}">
+                            {% trans "Register" %} </a>
+                        </p>
+
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

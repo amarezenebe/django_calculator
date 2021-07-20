@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% load forms %}
+{% load i18n %}
+
+{% block content %}
+
+<div>
+
+    <div class="flex flex-wrap justify-center mt-4 sm:mt-6 md:mt-10 px-2 md:px-0">
+        <div class="w-full max-w-xl">
+            <div class="flex flex-col break-words bg-white border border-2 rounded shadow-md">
+
+                <div class="font-semibold bg-gray-200 text-teal-700 py-3 px-6 mb-0 text-base">
+                    Calculate
+                </div>
+
+                <form class="w-full p-4" method="POST">
+                    {% csrf_token %}
+                    {% include "form/form.html" with form=form only='input' %}
+                    <div class="flex flex-col mt-2">
+                        <p class="text-md font-semibold text-center">You can input:</p>
+                        <p>
+                        <ul>
+                            <li> => 12*(2021/(12))+112-12+(34/5) .....................2127.8</li>
+                            <li> => 12>89......................................False</li>
+                            <li> => 2*(4+2) >=(3*4)/2 ..........................True</li>
+                        </ul>
+                        </p>
+
+
+                    </div>
+                    {% include "form/form.html" with form=form only='result' %}
+                    {% include "form/btn.html" with name="Calculate" center=True %}
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

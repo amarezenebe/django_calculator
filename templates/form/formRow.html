@@ -1,0 +1,40 @@
+{% load forms %}
+{% to_list field=field as list_field %}
+
+
+{% if list_field %}
+
+<div class=" py-1 bg-white ">
+    <div class="grid grid-cols-6 gap-2">
+        {% for field in form.visible_fields %}
+        {% if field.name in list_field %}
+        <div class="col-span-6 sm:col-span-3 lg:col-span-3">
+            <label for="{{ field.name }}" class="block text-base font-medium text-gray-700">
+                {{ field.label }}
+            </label>
+            {% if d_name or forloop.parentloop.counter == 1 %}
+            <label for="{{ field.name }}" class="block text-base font-medium text-gray-700">
+                {{ field.label }}
+            </label>
+            {% endif %}
+            {{ field|HtmlField:"mt-2 block w-full shadow-sm sm:text-base mt-2 border-gray-300 rounded-md px-0"}}
+            {% if  field.errors %}
+            <div class="flex justify-center item-center  text-red-600 flex item-center py-2 md:text-sm ">
+                {% for error in field.errors %}
+                {{ error }}
+                {% endfor %}
+            </div>
+
+
+            {% endif %}
+        </div>
+
+        {% endif %}
+        {% endfor %}
+
+    </div>
+</div>
+
+
+{% endif %}
+

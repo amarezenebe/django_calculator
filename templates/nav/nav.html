@@ -1,0 +1,26 @@
+<!-- This example requires Tailwind CSS v2.0+ -->
+{%load forms%}
+{% if user.is_authenticated%}
+<div id="nav" class="md:fixed md:top-0 w-full">
+    <nav class="bg-gray-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0" style="font-family: 'Baloo Tamma 2', cursive;">
+
+                    </div>
+                    {% include "nav/mainNav.html" %}
+                </div>
+                {% if user.is_authenticated%}
+                {% include "nav/authUser.html" %}
+                {%endif%}
+
+            </div>
+        </div>
+
+
+    </nav>
+
+
+</div>
+{%endif%}

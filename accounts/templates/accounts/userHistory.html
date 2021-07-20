@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% load forms %}
+{% load i18n %}
+{% load humanize %}
+
+{% block content %}
+
+<div>
+
+    <div class="flex flex-wrap justify-center mt-4 sm:mt-6 md:mt-10 px-2 md:px-0">
+        <div class="w-3/4">
+            <div class="flex flex-col break-words bg-white border border-2 rounded shadow-md w-full w-1/2">
+
+                <div class="font-semibold bg-gray-200 text-teal-700 py-3 px-6 mb-0 text-base">
+                    Calculate
+                </div>
+                <div class="flex mb-4">
+                    <div class="w-3/5 font-extrabold ml-6">
+                        Expiration
+                    </div>
+                    <div class="w-1/5 font-extrabold">
+                        Result
+                    </div>
+
+                    <div class="w-1/5 font-extrabold">
+                        time
+                    </div>
+                    <div class="w-1/5 font-extrabold">
+                        {%url "accounts:delete_all_history" as the_url%}
+                        <a href="{{the_url}}" class="bg-red-400 px-2 text-white"> Delete All </a>
+                    </div>
+
+                </div>
+                {% for object in object_list %}
+
+                <div class="flex mb-4">
+                    <div class="w-3/5 font-medium text-xl ml-6">
+                        {{object.input}}
+                    </div>
+                    <div class="w-1/5 font-medium">
+                        {{object.result}}
+                    </div>
+
+                    <div class="w-1/5 font-medium">
+                        {{ object.created_at|naturaltime }}
+                    </div>
+                    <div class="w-1/5 font-medium">
+
+
+                        <a href="{{ object.delete_history}}" class="bg-red-400 px-2 text-white"> Delete</a>
+
+                    </div>
+                </div>
+                {% empty %}
+                <li>No objects yet.</li>
+                {% endfor %}
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
