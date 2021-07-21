@@ -6,11 +6,11 @@ email Amarezenebe@gmail.com
 > - pip install django
 - https://github.com/amarezenebe/django_calculator/tree/master 
 
-> --  ../manage.py makemigrations
->-  manage.py migrate
+> --  ../python manage.py makemigrations
+>-  ../python manage.py migrate
 
 # To create super user
-> - ../ manage.py createsuperuser
+> - ../python manage.py createsuperuser
 
 - 	Nick =>your nick name
 - 	First name=> Your First Name
@@ -19,6 +19,7 @@ email Amarezenebe@gmail.com
 
 
 # Url of web application
+> python manage.py runserver
 - login page http://127.0.0.1:8000/login/
 - sign-up page http://127.0.0.1:8000/sign-up/
 - home page http://127.0.0.1:8000/home/
