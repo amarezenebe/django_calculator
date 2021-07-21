@@ -3,18 +3,20 @@ name Amare zenebe
 email Amarezenebe@gmail.com
 
 # install
-- pip install django
+> - pip install django
 - https://github.com/amarezenebe/django_calculator/tree/master 
 
-- ../manage.py makemigrations
-- manage.py migrate
+> - ../manage.py makemigrations
+> manage.py migrate- manage.py migrate
 
 # To create super user
-- ../ manage.py createsuperuser
-	nick =>your nick name
+> - ../ manage.py createsuperuser
+
+> 	nick =>your nick name
 	first name=> Your First Name
 	Last Name =>Your Last Name
 	password => **********
+
 
 # Url of web application
 - login page http://127.0.0.1:8000/login/
