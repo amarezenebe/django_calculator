@@ -89,18 +89,21 @@ class Home(LoginRequiredMixin, FormView):
 
         except Exception as e:
             if str(e).find("(<string>, line 1)") > -1:
-                result='Is not correct Mathematical input'
+                result='Is not Mathematical input'
             else:
                 # in order to use some math syntax like 1>0 ,2*(2+43)>5
                 result=str(e)
+        # in order to prevent print() built in function
+        finalResult=result if result is not None else 'Is not Mathematical input'
+
         calculatorHistory.objects.create(
             user=self.request.user,
             input=user_input,
-            result=result
+            result=finalResult
 
         )
         return render(self.request, "accounts/home.html", {
-            "form": Calculator(initial={"input": user_input, "result": result})
+            "form": Calculator(initial={"input": user_input, "result": finalResult})
         })
 
 
