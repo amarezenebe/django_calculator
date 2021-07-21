@@ -42,9 +42,7 @@ class RegistrationForm(forms.ModelForm):
         return password2
 
 
-class LoginForm(forms.Form):
-    email=forms.EmailField(label='Phone number or email ', )
-    password=forms.CharField(widget=forms.PasswordInput)
+
 
 
 class SignIn(UserCacheMixin, forms.Form):
