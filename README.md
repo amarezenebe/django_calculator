@@ -6,16 +6,16 @@ email Amarezenebe@gmail.com
 > - pip install django
 - https://github.com/amarezenebe/django_calculator/tree/master 
 
-> - ../manage.py makemigrations
-> manage.py migrate- manage.py migrate
+> --  ../manage.py makemigrations
+>-  manage.py migrate- manage.py migrate
 
 # To create super user
 > - ../ manage.py createsuperuser
 
-> 	nick =>your nick name
-	first name=> Your First Name
-	Last Name =>Your Last Name
-	password => **********
+- 	nick =>your nick name
+- 	first name=> Your First Name
+- 	Last Name =>Your Last Name
+- 	password => **********
 
 
 # Url of web application
