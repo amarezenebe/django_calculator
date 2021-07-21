@@ -1,6 +1,6 @@
-# django_calculator(https://github.com/amarezenebe/django_calculator/tree/master)
-name Amare zenebe
-email Amarezenebe@gmail.com
+# django_calculator
+## https://github.com/amarezenebe/django_calculator/tree/master
+
 
 # install
 > - pip install django
