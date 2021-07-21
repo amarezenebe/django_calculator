@@ -29,7 +29,7 @@ def firstName(value):
 def nickName(value):
     if len(value) < 5 or len(value) > 20:
         raise ValidationError(
-            "You Nick name should be 2-20 character.",
+            "You Nick name should be 5-20 character.",
         )
 
 
