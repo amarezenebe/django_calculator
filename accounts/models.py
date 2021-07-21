@@ -17,11 +17,11 @@ class MyUserQuerySet(models.query.QuerySet):
 def firstName(value):
     if len(value) < 2 or len(value) > 20:
         raise ValidationError(
-            "You fist name should be 2-20 character.",
+            "Should be 2-20 character.",
         )
     elif not value.isalpha():
         raise ValidationError(
-            "You fist name should be alphabets.",
+            "Should be alphabets.",
 
         )
 
@@ -36,11 +36,11 @@ def nickName(value):
 def lastName(value):
     if len(value) < 2 or len(value) > 20:
         raise ValidationError(
-            "You last name should be 2-20 character.",
+            "Should be 2-20 character.",
         )
     elif not value.isalpha():
         raise ValidationError(
-            "You last name must be alphabets.",
+            "Should be alphabets.",
         )
 
 
