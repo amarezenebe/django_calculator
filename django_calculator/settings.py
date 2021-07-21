@@ -120,6 +120,6 @@ MEDIA_ROOT=os.path.join(LOCAL_STATIC_CDN_PATH, 'media')
 SIGN_UP_FIELDS=('nick', 'first_name', "last_name")
 
 """if the user already join the url"""
-# LOGIN_REDIRECT_URL='accounts:profile'
+LOGIN_REDIRECT_URL='home'
 LOGIN_URL='accounts:login'
 DEFAULT_AUTO_FIELD='django.db.models.BigAutoField'
