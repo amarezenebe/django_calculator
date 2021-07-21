@@ -7,13 +7,13 @@ email Amarezenebe@gmail.com
 - https://github.com/amarezenebe/django_calculator/tree/master 
 
 > --  ../manage.py makemigrations
->-  manage.py migrate- manage.py migrate
+>-  manage.py migrate
 
 # To create super user
 > - ../ manage.py createsuperuser
 
-- 	nick =>your nick name
-- 	first name=> Your First Name
+- 	Nick =>your nick name
+- 	First name=> Your First Name
 - 	Last Name =>Your Last Name
 - 	password => **********
 
